@@ -1,0 +1,25 @@
+<nb-card>
+  <nb-card-header>
+    Fund table
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+
+
+ <button  type="button" class="btn btn-warning" (click)="getUpdatedFundList()">ReFresh</button>
+<button type="button" class="btn btn-info" (click)="getExcelFundList()">Generate Excel</button>
+<button type="button" class="btn btn-info" (click)="test()">Test</button>
+    
+
+
+<button type="button" class="btn btn-info" (click)="download()">download</button>
+
+
+<input #file type="file" multiple (change)="upload(file.files)" />
+<br />
+<span style="font-weight:bold;color:green;" *ngIf="message">
+  {{message}}
+</span>
